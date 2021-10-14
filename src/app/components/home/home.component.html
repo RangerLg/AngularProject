@@ -1,1 +1,35 @@
-<p>home works!</p>
+<mat-card>
+  <div style="margin-bottom: 20px">
+  <a  [routerLink]="['/addCollection']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+    <button>AddCollection</button>
+  </a>
+  </div>
+  <span>Our catalog</span>
+  <mat-table [dataSource]="collections" >
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let collection">{{collection.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="author">
+      <mat-header-cell *matHeaderCellDef>Collection name</mat-header-cell>
+      <mat-cell *matCellDef="let collection">{{collection.collectionName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef>Topic</mat-header-cell>
+      <mat-cell *matCellDef="let collection">{{collection.topic}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+      <mat-cell *matCellDef="let collection">{{collection.description}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row;columns:columns"></mat-row>
+  </mat-table>
+</mat-card>
+
+
+

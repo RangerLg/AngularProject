@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   authApi:'https://localhost:44328/',
   storeApi:'http://localhost:9968/',
-  tokenWhiteListedDomains: ['localhost:44328']
+  tokenWhiteListedDomains: ['localhost:44328','localhost:9968']
 };
 
 /*
