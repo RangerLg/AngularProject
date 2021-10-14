@@ -1,0 +1,28 @@
+<form>
+  <div class="Forms">
+    <label>Collection name</label>
+    <input
+      type="text"
+      required
+      #CollectionName
+    />
+  </div>
+  <div class="Forms">
+    <label>Topic</label>
+    <input
+      type="text"
+      required
+      #Topic
+    />
+  </div>
+  <div class="Forms">
+    <label>Description</label>
+    <input
+      type="text"
+      required
+      #Description
+    />
+  </div>
+
+  <button (click)="AddCollections(CollectionName.value,Topic.value,Description.value)">Add</button>
+</form>
