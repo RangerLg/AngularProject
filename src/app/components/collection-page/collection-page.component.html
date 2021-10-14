@@ -1,0 +1,31 @@
+<mat-card>
+  <div style="margin-bottom: 20px">
+    <a  [routerLink]="['/myCollection/collectionPage/AddItem',id]" >
+      <button>addItem</button>
+    </a>
+  </div>
+  <span>Items</span>
+  <mat-table [dataSource]="items" >
+    <ng-container matColumnDef="idItem">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{item.idItem}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="idCollection">
+      <mat-header-cell *matHeaderCellDef>Collection id</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{item.idCollection}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nameItem">
+      <mat-header-cell *matHeaderCellDef>Name item</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{item.nameItem}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row;columns:columns"></mat-row>
+  </mat-table>
+</mat-card>
+
+
+
+
