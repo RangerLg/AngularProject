@@ -1,0 +1,11 @@
+<form>
+  <div class="Forms">
+    <label>Item name</label>
+    <input
+      type="text"
+      required
+      #ItemName
+    />
+  </div>
+  <button (click)="AddItem(ItemName.value)">Add</button>
+</form>
