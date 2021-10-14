@@ -1,25 +1,28 @@
 <div>
 
-  <div class="topnav">
-    <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Bookstore</a>
-    <a [routerLink]="['/orders']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-    *ngIf="isLoggedIn">Bookstore</a>
+  <div style="margin-left: 20px" class="">
+    <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <button >All collections</button>
+    </a>
+    <a   [routerLink]="['/myCollection']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+    *ngIf="isLoggedIn"><button >My collections</button></a>
   </div>
-  <mat-card *ngIf="!isLoggedIn">
-    <mat-form-field class="example-form-field">
+  <mat-card  *ngIf="!isLoggedIn">
+    <mat-form-field style="margin-left: 20px"  class="example-form-field">
       <mat-label>Email</mat-label>
       <input type="email" matInput placeholder="user@email.com" #email>
     </mat-form-field>
 
-    <mat-form-field class="example-form-field">
+    <mat-form-field class="example-form-field" style="margin-left: 20px">
       <mat-label>Password</mat-label>
       <input type="password" matInput  #password>
     </mat-form-field>
-    <button mat-flat-button color="primary" (click)="login(email.value,password.value)">Login</button>
+    <button mat-flat-button color="primary"  style="margin-left: 40px"(click)="login(email.value,password.value)">Login</button>
+    <button mat-flat-button color="primary" style="margin-left: 40px" (click)="register(email.value,password.value)">Register</button>
   </mat-card>
 
-  <mat-card *ngIf="isLoggedIn">
-    <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+  <mat-card  *ngIf="isLoggedIn">
+    <button style="margin-left: 20px" mat-flat-button color="primary" (click)="logout()">Logout</button>
   </mat-card>
   <router-outlet></router-outlet>
 </div>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService} from "./service/auth.service";
-import {Book} from "./Models/Book";
+import {Collection} from "./Models/Collection";
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,7 @@ export class AppComponent {
     return this.as.isAuthenticated();
   }
 
-  public message: string = "";
-  public booksStore:Book[]=[]
+  public booksStore:Collection[]=[]
   constructor(private as: AuthService) {
   }
 
@@ -24,10 +23,14 @@ export class AppComponent {
         alert("Wrong login or password")
       })
   }
-
-
-
-
+  register(email: string, password: string) {
+    this.as.register(email, password).subscribe(res => {
+      alert("Registration success")
+      },
+      error => {
+        alert("Wrong login or password for registration")
+      })
+  }
   logout() {
     this.as.logout();
   }

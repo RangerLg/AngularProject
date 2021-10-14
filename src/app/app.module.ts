@@ -19,6 +19,10 @@ import {environment} from "../environments/environment";
 import {JwtModule} from "@auth0/angular-jwt";
 import {ACCESS_TOKEN_KEY} from "./service/auth.service";
 import {ReactiveFormsModule} from "@angular/forms";
+import { AddCollectionComponent } from './components/add-collection/add-collection.component';
+import { MyCollectionComponent } from './components/my-collection/my-collection.component';
+import { CollectionPageComponent } from './components/collection-page/collection-page.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
 export  function  tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY)
@@ -27,7 +31,11 @@ export  function  tokenGetter(){
   declarations: [
     AppComponent,
     HomeComponent,
-    OrdersComponent
+    OrdersComponent,
+    AddCollectionComponent,
+    MyCollectionComponent,
+    CollectionPageComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
